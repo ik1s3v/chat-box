@@ -1,0 +1,38 @@
+{
+  "name": "widget",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:control": "rsbuild build -c rsbuild.config.control.ts",
+    "build:view": "rsbuild build -c rsbuild.config.view.ts",
+    "build:control:watch": "npm run build:control -- --watch",
+    "build:view:watch": "npm run build:view -- --watch",
+    "build": "npm run build:control && npm run build:view",
+    "check": "biome check --write",
+    "format": "biome format --write",
+    "preview": "rsbuild preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^9.1.2",
+    "@reduxjs/toolkit": "^2.12.0",
+    "@widy/react": "^1.0.15",
+    "@widy/sdk": "^1.0.30",
+    "i18next": "^26.3.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-i18next": "^17.0.8",
+    "react-redux": "^9.3.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.0.6",
+    "@rsbuild/core": "^1.4.3",
+    "@rsbuild/plugin-react": "^1.3.3",
+    "@types/node": "^26.1.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "typescript": "^5.8.3"
+  }
+}

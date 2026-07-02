@@ -1,0 +1,13 @@
+{
+    "title": "Caja de Chat",
+    "save": "Guardar",
+    "success": "Éxito",
+    "on": "Activado",
+    "off": "Desactivado",
+    "is_show_badges": "Mostrar Insignias",
+    "is_show_sender_color": "Mostrar Color del Remitente",
+    "is_show_platform_color": "Mostrar Color de la Plataforma",
+    "is_up_to_bottom": "De Arriba a Abajo",
+    "is_show_timestamp": "Mostrar Marca de Tiempo",
+    "is_show_bot_messages": "Mostrar Mensajes del Bot"
+}

@@ -1,0 +1,27 @@
+{
+    "manifest_version": 1,
+    "name": "chat-box",
+    "id": "chat-box",
+    "version": "1.0.0",
+    "authors": [
+        "ik1s3v"
+    ],
+    "description": "Multy chat overlay for OBS.",
+    "repository": "https://github.com/ik1s3v/chat-box",
+    "scopes": [
+        "widgets:control:storage.read",
+        "widgets:control:storage.write",
+        "widgets:settings.read",
+        "widgets:control:storage.subscription",
+        "widgets:chat-message.subscription",
+        "widgets:chat-message-delete.subscription"
+    ],
+    "csp": {
+        "img_src": [
+            "https://static-cdn.jtvnw.net",
+            "https://files.kick.com",
+            "https://www.kickdatabase.com",
+            "https://ext.cdn.kick.com"
+        ]
+    }
+}

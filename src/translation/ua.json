@@ -1,0 +1,13 @@
+{
+    "title": "Чат-бокс",
+    "save": "Зберегти",
+    "success": "Успіх",
+    "on": "Увімкнено",
+    "off": "Вимкнено",
+    "is_show_badges": "Показувати значки",
+    "is_show_sender_color": "Показувати колір відправника",
+    "is_show_platform_color": "Показувати колір платформи",
+    "is_up_to_bottom": "Зверху вниз",
+    "is_show_timestamp": "Показувати час",
+    "is_show_bot_messages": "Показувати повідомлення бота"
+}

@@ -1,0 +1,13 @@
+{
+    "title": "Boîte de chat",
+    "save": "Enregistrer",
+    "success": "Succès",
+    "on": "Activé",
+    "off": "Désactivé",
+    "is_show_badges": "Afficher les badges",
+    "is_show_sender_color": "Afficher la couleur de l'expéditeur",
+    "is_show_platform_color": "Afficher la couleur de la plateforme",
+    "is_up_to_bottom": "De haut en bas",
+    "is_show_timestamp": "Afficher l'horodatage",
+    "is_show_bot_messages": "Afficher les messages du bot"
+}

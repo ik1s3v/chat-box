@@ -1,0 +1,13 @@
+{
+    "title": "聊天框",
+    "save": "保存",
+    "success": "成功",
+    "on": "开启",
+    "off": "关闭",
+    "is_show_badges": "显示徽章",
+    "is_show_sender_color": "显示发送者颜色",
+    "is_show_platform_color": "显示平台颜色",
+    "is_up_to_bottom": "从上到下",
+    "is_show_timestamp": "显示时间戳",
+    "is_show_bot_messages": "显示机器人消息"
+}

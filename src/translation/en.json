@@ -1,0 +1,13 @@
+{
+    "title": "Chat Box",
+    "save": "Save",
+    "success": "Success",
+    "on": "On",
+    "off": "Off",
+    "is_show_badges": "Show Badges",
+    "is_show_sender_color": "Show Sender Color",
+    "is_show_platform_color": "Show Platform Color",
+    "is_up_to_bottom": "Up to Bottom",
+    "is_show_timestamp": "Show Timestamp",
+    "is_show_bot_messages": "Show Bot Messages"
+}

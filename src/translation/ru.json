@@ -1,0 +1,13 @@
+{
+    "title": "Чат",
+    "save": "Сохранить",
+    "success": "Успешно",
+    "on": "Вкл",
+    "off": "Выкл",
+    "is_show_badges": "Показывать значки",
+    "is_show_sender_color": "Показывать цвет отправителя",
+    "is_show_platform_color": "Показывать цвет платформы",
+    "is_up_to_bottom": "Сверху вниз",
+    "is_show_timestamp": "Показывать время",
+    "is_show_bot_messages": "Показывать сообщения ботов"
+}

@@ -1,0 +1,13 @@
+{
+    "title": "चैट बॉक्स",
+    "save": "सहेजें",
+    "success": "सफलता",
+    "on": "चालू",
+    "off": "बंद",
+    "is_show_badges": "बैज दिखाएं",
+    "is_show_sender_color": "प्रेषक का रंग दिखाएं",
+    "is_show_platform_color": "प्लेटफॉर्म का रंग दिखाएं",
+    "is_up_to_bottom": "ऊपर से नीचे",
+    "is_show_timestamp": "समय दिखाएं",
+    "is_show_bot_messages": "बॉट संदेश दिखाएं"
+}

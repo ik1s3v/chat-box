@@ -1,0 +1,13 @@
+{
+    "title": "صندوق الدردشة",
+    "save": "حفظ",
+    "success": "نجاح",
+    "on": "مفعل",
+    "off": "معطل",
+    "is_show_badges": "إظهار الشارات",
+    "is_show_sender_color": "إظهار لون المرسل",
+    "is_show_platform_color": "إظهار لون المنصة",
+    "is_up_to_bottom": "من الأعلى إلى الأسفل",
+    "is_show_timestamp": "إظهار الطابع الزمني",
+    "is_show_bot_messages": "إظهار رسائل البوت"
+}

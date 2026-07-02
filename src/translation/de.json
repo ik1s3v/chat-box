@@ -1,0 +1,13 @@
+{
+    "title": "Chat-Box",
+    "save": "Speichern",
+    "success": "Erfolg",
+    "on": "An",
+    "off": "Aus",
+    "is_show_badges": "Abzeichen anzeigen",
+    "is_show_sender_color": "Absenderfarbe anzeigen",
+    "is_show_platform_color": "Plattformfarbe anzeigen",
+    "is_up_to_bottom": "Von oben nach unten",
+    "is_show_timestamp": "Zeitstempel anzeigen",
+    "is_show_bot_messages": "Bot-Nachrichten anzeigen"
+}
