@@ -1,12 +1,14 @@
 .settingsContainer {
   display: grid;
-  gap: 20px;
-  width: 600px;
+  place-content: center;
+  gap: 10px;
 }
+
 .settings {
   display: flex;
   place-items: center;
 }
+
 .label {
   width: 230px;
 }
@@ -16,6 +18,7 @@
     display: grid;
     place-items: start;
   }
+
   .settingsContainer {
     width: 100%;
   }

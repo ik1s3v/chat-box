@@ -2,7 +2,7 @@
     "manifest_version": 1,
     "name": "chat-box",
     "id": "chat-box",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "authors": [
         "ik1s3v"
     ],
