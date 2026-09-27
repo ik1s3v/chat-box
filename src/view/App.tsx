@@ -1,6 +1,7 @@
 import { useWidgetQuery, useWidgetSubscription } from '@widy/react';
 import {
   type IChatFragment,
+  type IUnifiedBannedUser,
   type IUnifiedChatMessage,
   type IUnifiedChatMessageDelete,
   Platform,
@@ -146,6 +147,19 @@ const App = () => {
       setMessages((currentMessages) =>
         currentMessages.filter(
           (message) => message.id !== deletedMessage.message_id,
+        ),
+      );
+    },
+  );
+
+  useWidgetSubscription<IUnifiedBannedUser>(
+    'widgets:channel-user-banned.subscription',
+    (bannedUser) => {
+      setMessages((currentMessages) =>
+        currentMessages.filter(
+          (message) =>
+            message.platform !== bannedUser.platform ||
+            message.sender.id !== bannedUser.target_user.id,
         ),
       );
     },
