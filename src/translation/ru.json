@@ -9,5 +9,7 @@
     "is_show_platform_color": "Показывать цвет платформы",
     "is_up_to_bottom": "Сверху вниз",
     "is_show_timestamp": "Показывать время",
-    "is_show_bot_messages": "Показывать сообщения ботов"
+    "is_show_bot_messages": "Показывать сообщения ботов",
+    "is_remove_message_after_delay": "Удалять сообщения с задержкой",
+    "remove_message_after_delay_seconds": "Задержка удаления (секунды)"
 }

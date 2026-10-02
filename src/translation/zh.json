@@ -9,5 +9,7 @@
     "is_show_platform_color": "显示平台颜色",
     "is_up_to_bottom": "从上到下",
     "is_show_timestamp": "显示时间戳",
-    "is_show_bot_messages": "显示机器人消息"
+    "is_show_bot_messages": "显示机器人消息",
+    "is_remove_message_after_delay": "延迟后删除消息",
+    "remove_message_after_delay_seconds": "删除延迟（秒）"
 }

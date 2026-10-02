@@ -9,5 +9,7 @@
     "is_show_platform_color": "Plattformfarbe anzeigen",
     "is_up_to_bottom": "Von oben nach unten",
     "is_show_timestamp": "Zeitstempel anzeigen",
-    "is_show_bot_messages": "Bot-Nachrichten anzeigen"
+    "is_show_bot_messages": "Bot-Nachrichten anzeigen",
+    "is_remove_message_after_delay": "Nachrichten verzögert entfernen",
+    "remove_message_after_delay_seconds": "Entfernungsverzögerung (Sekunden)"
 }

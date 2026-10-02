@@ -9,5 +9,7 @@
     "is_show_platform_color": "Показувати колір платформи",
     "is_up_to_bottom": "Зверху вниз",
     "is_show_timestamp": "Показувати час",
-    "is_show_bot_messages": "Показувати повідомлення бота"
+    "is_show_bot_messages": "Показувати повідомлення бота",
+    "is_remove_message_after_delay": "Видаляти повідомлення із затримкою",
+    "remove_message_after_delay_seconds": "Затримка видалення (секунди)"
 }

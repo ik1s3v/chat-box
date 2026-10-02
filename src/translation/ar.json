@@ -9,5 +9,7 @@
     "is_show_platform_color": "إظهار لون المنصة",
     "is_up_to_bottom": "من الأعلى إلى الأسفل",
     "is_show_timestamp": "إظهار الطابع الزمني",
-    "is_show_bot_messages": "إظهار رسائل البوت"
+    "is_show_bot_messages": "إظهار رسائل البوت",
+    "is_remove_message_after_delay": "إزالة الرسائل بعد تأخير",
+    "remove_message_after_delay_seconds": "مدة التأخير (بالثواني)"
 }

@@ -1,4 +1,4 @@
-import { Box, Button } from '@mui/material';
+import { Box, Button, TextField } from '@mui/material';
 import type { SerializedError } from '@reduxjs/toolkit';
 import { showSnackBar, useWidgetMutation, useWidgetQuery } from '@widy/react';
 import { AlertSeverity, type ISettings } from '@widy/sdk';
@@ -121,6 +121,41 @@ const App = () => {
               setChatSettings((prev) => ({
                 ...prev,
                 is_show_timestamp: checked,
+              }));
+            }}
+          />
+        </div>
+        <div className={styles.settings}>
+          <div className={styles.label}>
+            <span>{t('is_remove_message_after_delay')}:</span>
+          </div>
+          <OnOffSwitch
+            checked={chatSettings.is_remove_message_after_delay}
+            onChange={(_, checked) => {
+              setChatSettings((prev) => ({
+                ...prev,
+                is_remove_message_after_delay: checked,
+              }));
+            }}
+          />
+        </div>
+        <div className={styles.settings}>
+          <div className={styles.label}>
+            <span>{t('remove_message_after_delay_seconds')}:</span>
+          </div>
+          <TextField
+            type="number"
+            size="small"
+            value={chatSettings.remove_message_after_delay_seconds}
+            slotProps={{ htmlInput: { min: 1, step: 1 } }}
+            disabled={!chatSettings.is_remove_message_after_delay}
+            onChange={(event) => {
+              const delay = Number(event.target.value);
+              setChatSettings((prev) => ({
+                ...prev,
+                remove_message_after_delay_seconds: Number.isFinite(delay)
+                  ? Math.max(1, delay)
+                  : 1,
               }));
             }}
           />

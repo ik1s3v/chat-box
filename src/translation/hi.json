@@ -9,5 +9,7 @@
     "is_show_platform_color": "प्लेटफॉर्म का रंग दिखाएं",
     "is_up_to_bottom": "ऊपर से नीचे",
     "is_show_timestamp": "समय दिखाएं",
-    "is_show_bot_messages": "बॉट संदेश दिखाएं"
+    "is_show_bot_messages": "बॉट संदेश दिखाएं",
+    "is_remove_message_after_delay": "देरी के बाद संदेश हटाएं",
+    "remove_message_after_delay_seconds": "हटाने में देरी (सेकंड)"
 }

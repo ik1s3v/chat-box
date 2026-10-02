@@ -9,5 +9,7 @@
     "is_show_platform_color": "Mostrar Cor da Plataforma",
     "is_up_to_bottom": "De Cima para Baixo",
     "is_show_timestamp": "Mostrar Data/Hora",
-    "is_show_bot_messages": "Mostrar Mensagens do Bot"
+    "is_show_bot_messages": "Mostrar Mensagens do Bot",
+    "is_remove_message_after_delay": "Remover mensagens após um atraso",
+    "remove_message_after_delay_seconds": "Atraso para remoção (segundos)"
 }

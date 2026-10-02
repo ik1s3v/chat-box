@@ -6,7 +6,7 @@ import {
   type IUnifiedChatMessageDelete,
   Platform,
 } from '@widy/sdk';
-import { type CSSProperties, useEffect, useMemo, useState } from 'react';
+import { type CSSProperties, useEffect, useMemo, useRef, useState } from 'react';
 import './App.css';
 import { DEFAULT_CHATBOX_SETTINGS } from '../constants';
 import type { IChatBoxSettings } from '../types';
@@ -117,6 +117,7 @@ const App = () => {
   const [chatSettings, setChatSettings] = useState<IChatBoxSettings>(
     DEFAULT_CHATBOX_SETTINGS,
   );
+  const messageTimers = useRef(new Map<string, ReturnType<typeof setTimeout>>());
 
   const { data: storedChatSettings } = useWidgetQuery<unknown, string>({
     scope: 'widgets:control:storage.read',
@@ -127,6 +128,48 @@ const App = () => {
       setChatSettings(parseChatSettings(storedChatSettings));
     }
   }, [storedChatSettings]);
+
+  useEffect(() => {
+    const currentIds = new Set(messages.map((message) => message.id));
+
+    for (const [messageId, timer] of messageTimers.current) {
+      if (!currentIds.has(messageId)) {
+        clearTimeout(timer);
+        messageTimers.current.delete(messageId);
+      }
+    }
+
+    if (chatSettings.is_remove_message_after_delay) {
+      const delay = Math.max(1, chatSettings.remove_message_after_delay_seconds) * 1000;
+      for (const message of messages) {
+        if (!messageTimers.current.has(message.id)) {
+          messageTimers.current.set(
+            message.id,
+            setTimeout(() => {
+              setMessages((currentMessages) =>
+                currentMessages.filter((currentMessage) => currentMessage.id !== message.id),
+              );
+              messageTimers.current.delete(message.id);
+            }, delay),
+          );
+        }
+      }
+    } else {
+      for (const timer of messageTimers.current.values()) {
+        clearTimeout(timer);
+      }
+      messageTimers.current.clear();
+    }
+  }, [chatSettings.is_remove_message_after_delay, chatSettings.remove_message_after_delay_seconds, messages]);
+
+  useEffect(
+    () => () => {
+      for (const timer of messageTimers.current.values()) {
+        clearTimeout(timer);
+      }
+    },
+    [],
+  );
 
   useWidgetSubscription<IUnifiedChatMessage>(
     'widgets:chat-message.subscription',
