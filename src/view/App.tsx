@@ -277,6 +277,14 @@ const App = () => {
                   )}
                 </div>
                 <p className="message-text">
+                  {message.content.reply && (
+                    <span className="reply-context">
+                      <span aria-hidden="true">↪ </span>
+                      <span className="reply-username">
+                        {message.content.reply.parent_username}
+                      </span>{' '}
+                    </span>
+                  )}
                   <MessageContent
                     fallbackText={text}
                     fragments={fragments}
