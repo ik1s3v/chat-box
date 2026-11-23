@@ -4,7 +4,7 @@ import { WidgetOutboundBridge } from '@widy/sdk';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import '../i18n/i18n';
+import '../i18n';
 import { dark } from '@widy/react';
 import { Provider } from 'react-redux';
 import { store } from '../store';

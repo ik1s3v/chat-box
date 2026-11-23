@@ -1,4 +1,4 @@
-import { useWidgetQuery, useWidgetSubscription } from '@widy/react';
+import { useBridge, useWidgetQuery, useWidgetSubscription } from '@widy/react';
 import {
   type IChatFragment,
   type IUnifiedBannedUser,
@@ -6,7 +6,13 @@ import {
   type IUnifiedChatMessageDelete,
   Platform,
 } from '@widy/sdk';
-import { type CSSProperties, useEffect, useMemo, useRef, useState } from 'react';
+import {
+  type CSSProperties,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import './App.css';
 import { DEFAULT_CHATBOX_SETTINGS } from '../constants';
 import type { IChatBoxSettings } from '../types';
@@ -117,10 +123,14 @@ const App = () => {
   const [chatSettings, setChatSettings] = useState<IChatBoxSettings>(
     DEFAULT_CHATBOX_SETTINGS,
   );
-  const messageTimers = useRef(new Map<string, ReturnType<typeof setTimeout>>());
+  const messageTimers = useRef(
+    new Map<string, ReturnType<typeof setTimeout>>(),
+  );
+  const bridge = useBridge();
 
   const { data: storedChatSettings } = useWidgetQuery<unknown, string>({
     scope: 'widgets:control:storage.read',
+    transport: bridge,
   });
 
   useEffect(() => {
@@ -140,14 +150,17 @@ const App = () => {
     }
 
     if (chatSettings.is_remove_message_after_delay) {
-      const delay = Math.max(1, chatSettings.remove_message_after_delay_seconds) * 1000;
+      const delay =
+        Math.max(1, chatSettings.remove_message_after_delay_seconds) * 1000;
       for (const message of messages) {
         if (!messageTimers.current.has(message.id)) {
           messageTimers.current.set(
             message.id,
             setTimeout(() => {
               setMessages((currentMessages) =>
-                currentMessages.filter((currentMessage) => currentMessage.id !== message.id),
+                currentMessages.filter(
+                  (currentMessage) => currentMessage.id !== message.id,
+                ),
               );
               messageTimers.current.delete(message.id);
             }, delay),
@@ -160,7 +173,11 @@ const App = () => {
       }
       messageTimers.current.clear();
     }
-  }, [chatSettings.is_remove_message_after_delay, chatSettings.remove_message_after_delay_seconds, messages]);
+  }, [
+    chatSettings.is_remove_message_after_delay,
+    chatSettings.remove_message_after_delay_seconds,
+    messages,
+  ]);
 
   useEffect(
     () => () => {
@@ -173,6 +190,7 @@ const App = () => {
 
   useWidgetSubscription<IUnifiedChatMessage>(
     'widgets:chat-message.subscription',
+    bridge,
     (message) => {
       setMessages((currentMessages) => {
         const withoutDuplicate = currentMessages.filter(
@@ -186,6 +204,7 @@ const App = () => {
 
   useWidgetSubscription<IUnifiedChatMessageDelete>(
     'widgets:chat-message-delete.subscription',
+    bridge,
     (deletedMessage) => {
       setMessages((currentMessages) =>
         currentMessages.filter(
@@ -197,6 +216,7 @@ const App = () => {
 
   useWidgetSubscription<IUnifiedBannedUser>(
     'widgets:channel-user-banned.subscription',
+    bridge,
     (bannedUser) => {
       setMessages((currentMessages) =>
         currentMessages.filter(
@@ -210,6 +230,7 @@ const App = () => {
 
   useWidgetSubscription<string>(
     'widgets:control:storage.subscription',
+    bridge,
     (data) => {
       setChatSettings(parseChatSettings(data));
     },
