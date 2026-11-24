@@ -1,6 +1,6 @@
 {
   "name": "widget",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "private": true,
   "type": "module",
   "scripts": {
@@ -18,8 +18,8 @@
     "@emotion/styled": "^11.14.1",
     "@mui/material": "^9.1.2",
     "@reduxjs/toolkit": "^2.12.0",
-    "@widy/react": "^1.0.19",
-    "@widy/sdk": "^1.0.48",
+    "@widy/react": "^1.0.20",
+    "@widy/sdk": "^1.0.49",
     "i18next": "^26.3.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
